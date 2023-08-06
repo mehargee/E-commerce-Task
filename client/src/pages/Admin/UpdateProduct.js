@@ -12,6 +12,7 @@ const UpdateProduct = () => {
   const params = useParams();
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
+  const [color, setColor] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
@@ -27,6 +28,7 @@ const UpdateProduct = () => {
         `/api/v1/product/get-product/${params.slug}`
       );
       setName(data.product.name);
+      setColor(data.product.color);
       setId(data.product._id);
       setDescription(data.product.description);
       setPrice(data.product.price);
@@ -65,6 +67,7 @@ const UpdateProduct = () => {
     try {
       const productData = new FormData();
       productData.append("name", name);
+      productData.append("color", color);
       productData.append("description", description);
       productData.append("price", price);
       productData.append("quantity", quantity);
@@ -168,6 +171,15 @@ const UpdateProduct = () => {
                   placeholder="write a name"
                   className="form-control"
                   onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="text"
+                  value={color}
+                  placeholder="write a Color"
+                  className="form-control"
+                  onChange={(e) => setColor(e.target.value)}
                 />
               </div>
               <div className="mb-3">

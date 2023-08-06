@@ -11,6 +11,7 @@ const CreateProduct = () => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
+  const [color, setColor] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
@@ -41,6 +42,7 @@ const CreateProduct = () => {
     try {
       const productData = new FormData();
       productData.append("name", name);
+      productData.append("color", color);
       productData.append("description", description);
       productData.append("price", price);
       productData.append("quantity", quantity);
@@ -119,6 +121,15 @@ const CreateProduct = () => {
                   placeholder="write a name"
                   className="form-control"
                   onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="text"
+                  value={color}
+                  placeholder="Color"
+                  className="form-control"
+                  onChange={(e) => setColor(e.target.value)}
                 />
               </div>
               <div className="mb-3">
