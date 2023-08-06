@@ -35,48 +35,50 @@ const ForgotPasssword = () => {
   };
   return (
     <Layout title={"Forgot Password - Ecommerce APP"}>
-      <div className="form-container ">
-        <form onSubmit={handleSubmit}>
-          <h4 className="title">RESET PASSWORD</h4>
-
-          <div className="mb-3">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="form-control"
-              id="exampleInputEmail1"
-              placeholder="Enter Your Email "
-              required
-            />
+      <div className="form-container mt-5 align-items-center justify-content-center d-flex flex-column">
+        <h4 className="title">RESET PASSWORD</h4>
+        <div className="card w-50">
+          <div className="card-body">
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="form-control"
+                  id="exampleInputEmail1"
+                  placeholder="Enter Your Email "
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="text"
+                  value={answer}
+                  onChange={(e) => setAnswer(e.target.value)}
+                  className="form-control"
+                  id="exampleInputEmail1"
+                  placeholder="Enter Your favorite Sport Name "
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="password"
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                  className="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Enter Your Password"
+                  required
+                />
+              </div>
+              <button type="submit" className="btn btn-primary">
+                RESET
+              </button>
+            </form>
           </div>
-          <div className="mb-3">
-            <input
-              type="text"
-              value={answer}
-              onChange={(e) => setAnswer(e.target.value)}
-              className="form-control"
-              id="exampleInputEmail1"
-              placeholder="Enter Your favorite Sport Name "
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <input
-              type="password"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-              className="form-control"
-              id="exampleInputPassword1"
-              placeholder="Enter Your Password"
-              required
-            />
-          </div>
-
-          <button type="submit" className="btn btn-primary">
-            RESET
-          </button>
-        </form>
+        </div>
       </div>
     </Layout>
   );

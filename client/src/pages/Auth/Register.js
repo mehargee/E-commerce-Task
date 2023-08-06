@@ -130,6 +130,15 @@ const Register = () => {
               <button type="submit" className="btn btn-primary">
                 REGISTER
               </button>
+              <div className="mt-2"><p
+                className="btn text-muted"
+                style={{ fontSize: 12 }}
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                Already have an account?
+              </p></div>
             </form>
           </div>
         </div>

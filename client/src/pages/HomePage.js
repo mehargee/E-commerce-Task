@@ -21,7 +21,7 @@ const HomePage = () => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
 
-  //get all cat
+  //get all categories
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get("/api/v1/category/get-category");
@@ -108,22 +108,16 @@ const HomePage = () => {
     }
   };
   return (
-    <Layout title={"ALl ucts - Best offers "}>
+    <Layout title={"Shoppable.com"}>
       <section className="home">
         {/* banner image */}
-        <div div id="carouselExample" class="carousel slide" >
+        <div id="carouselExample" class="carousel slide">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src={banner1} class="d-block w-100" alt="Banner" />
-              <div class="carousel-caption d-none d-md-block">
-                <a className="text-dark btn btn-primary" href='#products'>View Products <i class="bi bi-arrow-right"></i></a>
-              </div>
             </div>
             <div class="carousel-item">
               <img src={banner2} class="d-block w-100" alt="Banner" />
-              <div class="carousel-caption d-none d-md-block">
-                <a className="text-dark btn btn-primary" href='#products'>View Products <i class="bi bi-arrow-right"></i></a>
-              </div>
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -134,16 +128,16 @@ const HomePage = () => {
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
-        </div >
+        </div>
         {/* banner image */}
         {/* Featured */}
         <section className="featured">
           <div className="container-fluid row mt-3 bg-light py-5" >
             <div className="col-12">
               <h1 className="text-center">Featured Products</h1>
-              <div className="d-flex flex-wrap">
-                {products?.map((p) => (
-                  <div className="card m-2 col-md-3" key={p._id}>
+              <div className="d-flex flex-wrap align-items-center justify-content-center">
+                {products?.slice(0, 4).map((p) => (
+                  <div className="card m-2 col-md-3" style={{ width: '19rem' }} key={p._id}>
                     <img
                       src={`/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
@@ -228,7 +222,7 @@ const HomePage = () => {
             <h1 id="products" className="text-center">All Products</h1>
             <div className="d-flex flex-wrap">
               {products?.map((p) => (
-                <div className="card m-2" key={p._id}>
+                <div className="card m-1" style={{ width: "19rem " }} key={p._id}>
                   <img
                     src={`/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"

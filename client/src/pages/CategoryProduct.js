@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout/Layout";
 import { useParams, useNavigate } from "react-router-dom";
-import "../styles/CategoryProductStyles.css";
 import axios from "axios";
 const CategoryProduct = () => {
   const params = useParams();
@@ -27,6 +26,7 @@ const CategoryProduct = () => {
   return (
     <Layout>
       <div className="container mt-3 category">
+        <h1 className="text-center text-primary">Browse categories</h1>
         <h4 className="text-center">Category - {category?.name}</h4>
         <h6 className="text-center">{products?.length} result found </h6>
         <div className="row">

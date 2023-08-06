@@ -75,7 +75,10 @@ const Header = () => {
                       data-bs-toggle="dropdown"
                       style={{ border: "none" }}
                     >
-                      <i class="bi bi-person-circle"></i> {auth?.user?.name}
+                      <i class="bi bi-person-circle"></i> {auth?.user?.name} {
+                        auth?.user?.role === 1 ?
+                          '(Admin)' : ''
+                      }
                     </NavLink>
                     <ul className="dropdown-menu">
                       <li>
